@@ -1,0 +1,1 @@
+exports.uid = (num) => Date.now().toString(32)+num;
