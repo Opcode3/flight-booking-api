@@ -79,4 +79,3 @@ exports.deleteFlight = (req, res) => { //delete booked flight via id
     res.status(status).json({message});
 }
 
-// module.exports = example;
