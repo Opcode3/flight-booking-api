@@ -1,21 +1,14 @@
-const flight_data = [
-    {
-        id: 1,
-        title: "flight to canada",
-        time: "1pm",
-        price: 26000,
-        date: "26-06-2022"
-    },
-    {
-        id: 2,
-        title: "flight to europe",
-        time: "7am",
-        price: 60000,
-        date: "06-07-2022"
-    }
-]
+const { uid, jsonReader, jsonWriter } = require('../helper/index');
 
-const { uid } = require('../helper/index');
+// const initialize = () => {
+    let flight_data;
+    jsonReader(( data )=> {
+        flight_data = data;
+    })
+// }
+
+// initialize();
+
 
 exports.getFlights = (req, res) => { // get all booked flight
     res.json(flight_data);
@@ -31,6 +24,7 @@ exports.bookFlight = (req, res) => { // book a flight
     const data = req.body.data;
     data.id = uid(flight_data.length + 1);
     flight_data.push(data);
+    jsonWriter(JSON.stringify(flight_data));
     res.json(data);
 }
 
@@ -56,6 +50,7 @@ exports.updateFlight = (req, res, next) => { // edit booked flight via id
         message = "no flight has been registered";
     }
 
+    jsonWriter(JSON.stringify(flight_data));
     res.status(status).json(message)
 }
 
@@ -75,7 +70,8 @@ exports.deleteFlight = (req, res) => { //delete booked flight via id
     }else{
         message = "no flight has been registered";
     }
-    
+    jsonWriter(JSON.stringify(flight_data));
     res.status(status).json({message});
 }
+
 

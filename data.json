@@ -1,0 +1,23 @@
+[
+    {
+        "title": "flight to Congo",
+        "time": "1pm",
+        "price": 5000,
+        "date": "6-07-2022",
+        "id": "1g6dmobcp3"
+    },
+    {
+        "title": "flight to Europe",
+        "time": "1pm",
+        "price": 5000,
+        "date": "6-07-2022",
+        "id": "1g6dmrn532"
+    },
+    {
+        "title": "flight to London",
+        "time": "10pm",
+        "price": 15000,
+        "date": "19-07-2022",
+        "id": "1g6dms7mt3"
+    }
+]
